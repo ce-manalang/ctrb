@@ -1,0 +1,15 @@
+p
+  span Hello
+  span= @email
+  span !
+
+- if @resource.try(:unconfirmed_email?)
+  p
+    span> We're contacting you to notify you that your email is being changed to
+    span= @resource.unconfirmed_email
+    span .
+- else
+  p
+    span> We're contacting you to notify you that your email has been changed to
+    span= @resource.email
+    span .
